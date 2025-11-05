@@ -24,6 +24,9 @@ console.log(userB)
 whoIsOlder(userA, userB)
 
 //SECONDO ESERCIZIO
+console.log("ESERCIZIO 2°")
+
+const ownerList = []
 
 class Pet {
     constructor(_petName, _ownerName, _species, _breed){
@@ -31,9 +34,20 @@ class Pet {
     this.ownerName = _ownerName
     this.species = _species
     this.breed = _breed
-    // sameOwner(){}
+    const sameOwner = function(){
+        for(i=0; i <= ownerList.lenght; i++){
+            if (ownerList[i] == this.ownerName){
+               return console.log(true)
+            } else {
+                ownerList.push(this.ownerName)
+                return console.log(false)
+            }
+        }
+
+    }
     }
 }
+
 
 const petNameInput = document.getElementById('inputPetName')
 const ownertNameInput = document.getElementById('inputOwnerName')
@@ -70,5 +84,4 @@ form.addEventListener('submit', (e) => {
     }   
 ) 
 
-console.log(petsContainer)
 console.log(document.getElementsByName('pet'))
