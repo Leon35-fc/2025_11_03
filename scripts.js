@@ -34,17 +34,17 @@ class Pet {
     this.ownerName = _ownerName
     this.species = _species
     this.breed = _breed
-    const sameOwner = function(){
-        for(i=0; i <= ownerList.lenght; i++){
-            if (ownerList[i] == this.ownerName){
-               return console.log(true)
-            } else {
-                ownerList.push(this.ownerName)
-                return console.log(false)
-            }
-        }
-
     }
+
+sameOwner(pet) {
+
+        if (ownerList.includes(this.ownerName)){
+            console.log(this.ownerName)
+           return console.log(true)
+        } else {
+            ownerList.push(this.ownerName)
+            return console.log(false)
+        }
     }
 }
 
@@ -66,6 +66,16 @@ form.addEventListener('submit', (e) => {
     
     const pet = new Pet(petName, ownerName, species, breed)
     console.log(pet)
+
+    
+    // if(ownerList.includes(ownerName)){
+    //     console.log(true)   
+    //     } else {
+    //         ownerList.push(ownerName)
+    //         console.log(false)
+    //     }
+
+    pet.sameOwner(ownerName)
 
     form.reset()
     //CREA LA SCHEDA DEL PET
